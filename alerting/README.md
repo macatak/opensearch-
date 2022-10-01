@@ -18,7 +18,7 @@ formerly Destinations
 - List active notification channels
   - GET _plugins/_notifications/configs  
 - Create a Notfication channel that uses the Python webhook
-  - <code>
+  
   POST /_plugins/_notifications/configs/
   {
     "config_id": "notification_api_1",
@@ -33,12 +33,31 @@ formerly Destinations
      }
   }
 }
-</code>  
+
 
 - Get the setting for the channel
+  - GET _plugins/_notifications/configs/notification_api_1
 
 - Update the channel
+  
+  PUT _plugins/_notifications/configs/notification_api_1
+{
+  "config": {
+    "name": "webhook_notify_1",
+    "description": "webhook channel from API",
+    "config_type": "webhook",
+    "is_enabled": true,
+    "webhook": {
+      "url": "http:127.0.0.1:5000"
+    }
+  }
+}
+
 - Delete the channel  
+  - DELETE /_plugins/_notifications/configs/notification_api_1
+
+- Send a test notification
+  - GET _plugins/_notifications/feature/test/notification_api_1
 
 ### cURL command
 
