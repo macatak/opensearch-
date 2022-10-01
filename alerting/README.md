@@ -54,11 +54,15 @@ formerly Destinations
   }
 }
 
+- Send a test notification
+- 
+  GET _plugins/_notifications/feature/test/notification_api_1
+
+
 - Delete the channel  
+
   DELETE /_plugins/_notifications/configs/notification_api_1
 
-- Send a test notification
-  GET _plugins/_notifications/feature/test/notification_api_1
 
 ### cURL command
 
