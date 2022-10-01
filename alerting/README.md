@@ -13,9 +13,9 @@ formerly Destinations
 ### Dev Tools
 *NOTE - View raw text to maintain Dev Tools formatting*
 
-- List supported Notification Channel types
+- List supported Notification Channel types  
   GET /_plugins/_notifications/features  
-- List active notification channels
+- List active notification channels  
   GET _plugins/_notifications/configs  
 - Create a Notfication channel that uses the Python webhook
   
@@ -35,7 +35,8 @@ formerly Destinations
 }
 
 
-- Get the setting for the channel
+- Get the setting for the channel  
+
   GET _plugins/_notifications/configs/notification_api_1
 
 - Update the channel
