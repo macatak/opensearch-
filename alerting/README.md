@@ -14,9 +14,9 @@ formerly Destinations
 *NOTE - View raw text to maintain Dev Tools formatting*
 
 - List supported Notification Channel types
-  - GET /_plugins/_notifications/features  
+  GET /_plugins/_notifications/features  
 - List active notification channels
-  - GET _plugins/_notifications/configs  
+  GET _plugins/_notifications/configs  
 - Create a Notfication channel that uses the Python webhook
   
   POST /_plugins/_notifications/configs/
@@ -36,7 +36,7 @@ formerly Destinations
 
 
 - Get the setting for the channel
-  - GET _plugins/_notifications/configs/notification_api_1
+  GET _plugins/_notifications/configs/notification_api_1
 
 - Update the channel
   
@@ -54,10 +54,10 @@ formerly Destinations
 }
 
 - Delete the channel  
-  - DELETE /_plugins/_notifications/configs/notification_api_1
+  DELETE /_plugins/_notifications/configs/notification_api_1
 
 - Send a test notification
-  - GET _plugins/_notifications/feature/test/notification_api_1
+  GET _plugins/_notifications/feature/test/notification_api_1
 
 ### cURL command
 
