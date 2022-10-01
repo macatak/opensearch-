@@ -11,7 +11,7 @@ formerly Destinations
   - This will run a Flask webhook on 127.0.0.1:5000 that will echo any text or ctx values passed
   
 ### Dev Tools
-:NOTE - View raw test to maintain Dev Tools formatting
+*NOTE - View raw test to maintain Dev Tools formatting*
 
 - List supported Notification Channel types
   - GET /_plugins/_notifications/features  
