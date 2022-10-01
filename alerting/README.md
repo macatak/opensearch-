@@ -1,6 +1,6 @@
 # Alerting Setup
 
-Creating and delaing with alerts
+Creating and dealing with alerts
 
 ## Notifications
 formerly Destinations
@@ -18,7 +18,7 @@ formerly Destinations
 - List active notification channels
   - GET _plugins/_notifications/configs  
 - Create a Notfication channel that uses the Python webhook
-  - <coode>
+  - <code>
   POST /_plugins/_notifications/configs/
   {
     "config_id": "notification_api_1",
@@ -33,6 +33,12 @@ formerly Destinations
      }
   }
 }
- </code>
+</code>  
+
+- Get the setting for the channel
+
+- Update the channel
+- Delete the channel  
+
 ### cURL command
 
