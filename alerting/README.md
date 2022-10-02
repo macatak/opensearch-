@@ -66,3 +66,18 @@ formerly Destinations
 
 ### cURL command
 
+- Create a channel  
+curl -XPOST -u admin:admin --insecure "https://localhost:9200/_plugins/_notifications/configs/" -H 'Content-Type: application/json' -d'
+{
+    "config_id": "notification_curl_1",
+    "name": "webhook_notify_curl1",
+    "config": {
+      "name": "Sample webhook Channel",
+      "description": "webhook channel from cURL",
+      "config_type": "webhook",
+      "is_enabled": true,
+      "webhook": {
+        "url": "http://127.0.0.1:5000"
+     }
+  }
+}'
