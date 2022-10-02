@@ -7,7 +7,7 @@ formerly Destinations which is deprecated
 
 ### Python Webhook Receiver
 - Set up a simple Python webhook so we have a place to send Alerts
-  - Navigate to [Python Webhook](https://github.com/macatak/python/blob/master/webhookRecv.py) and run the code in a terminal window
+  - Navigate to [Python Webhook](https://github.com/macatak/python/blob/master/webhookRecv.py), download and run the code in a terminal window
   - This will run a Flask webhook on 127.0.0.1:5000 that will echo any text or ctx values passed
   - Open this in a terminal and just let it run
   <code>python3 /<path to script>/webHookRecv.py</code>
