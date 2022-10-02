@@ -44,6 +44,7 @@ formerly Destinations which is deprecated
 
   GET _plugins/_notifications/configs/notification_api_1
 
+
 - Update the channel
   
   PUT _plugins/_notifications/configs/notification_api_1
@@ -59,8 +60,9 @@ formerly Destinations which is deprecated
   }
 }
 
+
 - Send a test notification
-- 
+
   GET _plugins/_notifications/feature/test/notification_api_1
 
 
@@ -72,12 +74,17 @@ formerly Destinations which is deprecated
 ### cURL command
 
 - List supported Notification Channel types
+  
   curl -XGET -u admin:admin --insecure "https://localhost:9200/_plugins/_notifications/features"
 
+
 - List active notification channels
+  
   curl -XGET -u admin:admin --insecure "https://localhost:9200/_plugins/_notifications/configs"
 
+
 - Create a Notfication channel that uses the Python webhook  
+  
   curl -XPOST -u admin:admin --insecure "https://localhost:9200/_plugins/_notifications/configs/" -H 'Content-Type: application/json' -d'
 {
     "config_id": "notification_curl_1",
@@ -94,6 +101,7 @@ formerly Destinations which is deprecated
 }'
 
 - Get the settings for the channel  
+  
   curl -XGET -u admin:admin --insecure "https://localhost:9200/_plugins/_notifications/configs/notification_curl_1"
 
 - Send a test notification (should cause webhook receiver terminal to show data)
