@@ -13,14 +13,19 @@ formerly Destinations which is deprecated
   - Open this in a terminal and just let it run
   <code>python3 /*path to script*/webHookRecv.py</code>
   
+  
 ### Dev Tools
 *NOTE - View raw text to maintain Dev Tools formatting*
 
 - List supported Notification Channel types  
+
   GET /_plugins/_notifications/features  
 
+
 - List active notification channels  
+
   GET _plugins/_notifications/configs  
+
 
 - Create a Notfication channel that uses the Python webhook
   
@@ -104,7 +109,9 @@ formerly Destinations which is deprecated
   
   curl -XGET -u admin:admin --insecure "https://localhost:9200/_plugins/_notifications/configs/notification_curl_1"
 
+
 - Send a test notification (should cause webhook receiver terminal to show data)
+ 
   curl -XGET -u admin:admin --insecure "https://localhost:9200/_plugins/_notifications/feature/test/notification_curl_1"
   
   
