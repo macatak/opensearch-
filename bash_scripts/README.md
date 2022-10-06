@@ -4,4 +4,4 @@
 ## Create a monitor
 Use bash script to create a monitor
  rev 1 i.e needs work
-- Navigate to [MyELK](https://github.com/macatak/ELK)
+- [cURL to create a monitor](https://github.com/macatak/opensearch-/blob/main/bash_scripts/createMonitor.sh)
