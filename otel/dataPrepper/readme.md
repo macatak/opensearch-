@@ -1,6 +1,6 @@
-==== Data Prepper files ====
+## Data Prepper files
 
-=== very much a WIP ===
+### very much a WIP
 
 Commands
 OTEL - otelcol --config /home/bikeride/vsCode/python/otel/otelCollectorYmls/otelColConf_dPrep.yml 
