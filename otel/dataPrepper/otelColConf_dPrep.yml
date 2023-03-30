@@ -1,0 +1,23 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+
+processors:
+  batch/traces:
+    timeout: 1s
+    send_batch_size: 50
+
+exporters:
+  otlp/data-prepper:
+    # endpoint: localhost:4900
+    endpoint: localhost:21890
+    tls:
+      insecure: true
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch/traces]
+      exporters: [otlp/data-prepper]

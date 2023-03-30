@@ -1,0 +1,13 @@
+simple-sample-pipeline:
+  delay: "100"
+  source:
+    otel_trace_source:
+      ssl: false
+  workers: 2 # the number of workers
+  delay: 5000 # in milliseconds, how long workers wait between read attempts
+  buffer:
+    bounded_blocking:
+      buffer_size: 1024 # max number of records the buffer accepts
+      batch_size: 256 # max number of records the buffer drains after each read
+  sink:
+    - stdout:
