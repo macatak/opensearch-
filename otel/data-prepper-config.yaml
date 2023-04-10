@@ -1,0 +1,7 @@
+# data-prepper-config.yaml
+
+ssl: false
+authentication:
+  http_basic:
+    username: "admin"
+    password: "admin"
