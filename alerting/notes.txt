@@ -1,0 +1,25 @@
+Update Alerting Mapping
+GET _index_template
+# get specific template
+GET _index_template/alert_index_template
+# check for mapping
+GET alert_index_test/_mapping
+
+# type: keyword is fine — you're not analyzing it
+# index: false keeps it out of the search engine
+
+PUT _index_template/alert_index_template
+{
+  "index_patterns": ["alert_index_test"], 
+  "template": {
+    "mappings": {
+      "properties": {
+        "largePayload": {
+          "type": "keyword",
+          "index": false
+        }
+      }
+    }
+  },
+  "priority": 10
+}

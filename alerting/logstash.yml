@@ -1,0 +1,23 @@
+# start it
+#
+# ./bin/logstash -f ./config/disk_monitor_pipeline.conf --path.settings ./config
+#
+# --------- Core Settings ---------
+# Bind to localhost only
+http.host: "127.0.0.1"
+
+# Data & log paths (relative to Logstash root or use full paths)
+path.data: "./data"
+path.logs: "./logs"
+
+# Pipeline settings
+pipeline.batch.size: 50
+pipeline.workers: 2
+
+# --------- Logging ---------
+
+# Logging level (options: fatal, error, warn, info, debug, trace)
+log.level: info
+
+# --------- Dead Letter Queue (optional) ---------
+dead_letter_queue.enable: false
