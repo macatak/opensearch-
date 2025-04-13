@@ -5,6 +5,41 @@ GET _index_template/alert_index_template
 # check for mapping
 GET alert_index_test/_mapping
 
+# Set loopback file for storage to test the storage alert setup
+# create a 20GB mount
+sudo mkdir -p /mnt/opensearch-disk
+sudo dd if=/dev/zero of=/mnt/opensearch-disk/opensearch.img bs=1G count=20
+# format with ext4
+sudo mkfs.ext4 /mnt/opensearch-disk/opensearch.img
+# mount it
+sudo mkdir -p /mnt/opensearch-data-limited
+sudo mount -o loop /mnt/opensearch-disk/opensearch.img /mnt/opensearch-data-limited
+#
+# update docker-compose:
+services:
+  opensearch-node1:
+    image: opensearchproject/opensearch:latest
+    volumes:
+      - opensearch-data:/usr/share/opensearch/data
+
+# check it in Dev Tools
+GET _cat/nodes?v&h=name,disk.avail,disk.total
+
+# delete the mount
+sudo umount /mnt/opensearch-data-limited
+sudo rm -rf /mnt/opensearch-disk /mnt/opensearch-data-limited
+
+
+volumes:
+  opensearch-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/opensearch-data-limited
+
+
+
 # type: keyword is fine — you're not analyzing it
 # index: false keeps it out of the search engine
 
