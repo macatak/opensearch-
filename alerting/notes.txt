@@ -6,21 +6,22 @@ GET _index_template/alert_index_template
 GET alert_index_test/_mapping
 
 # Set loopback file for storage to test the storage alert setup
-# create a 20GB mount
+# Create a parent directory for the disk image
 sudo mkdir -p /mnt/opensearch-disk
-sudo dd if=/dev/zero of=/mnt/opensearch-disk/opensearch.img bs=1G count=20
-# format with ext4
+
+# Create a 10GB empty file (the "virtual disk")
+sudo dd if=/dev/zero of=/mnt/opensearch-disk/opensearch.img bs=1G count=10
+
+# Format it with ext4 
 sudo mkfs.ext4 /mnt/opensearch-disk/opensearch.img
-# mount it
+
+# Create the target mount directory for Docker to use
 sudo mkdir -p /mnt/opensearch-data-limited
+
+# Mount the file as a loop device
 sudo mount -o loop /mnt/opensearch-disk/opensearch.img /mnt/opensearch-data-limited
-#
-# update docker-compose:
-services:
-  opensearch-node1:
-    image: opensearchproject/opensearch:latest
-    volumes:
-      - opensearch-data:/usr/share/opensearch/data
+
+sudo chown -R 1000:1000 /mnt/opensearch-data-limited
 
 # check it in Dev Tools
 GET _cat/nodes?v&h=name,disk.avail,disk.total
